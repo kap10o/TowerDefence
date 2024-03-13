@@ -1,0 +1,5 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/ilkap/Documents/GitHub/Tower Defence/Tower Defence/Content/Enemy.png","C:/Users/ilkap/Documents/GitHub/Tower Defence/Tower Defence/Content/bin/Windows/Content/Enemy.xnb","TextureProcessor","Texture2DContent",295,2585,0,1114593
+"C:/Users/ilkap/Documents/GitHub/Tower Defence/Tower Defence/Content/TheMap.png","C:/Users/ilkap/Documents/GitHub/Tower Defence/Tower Defence/Content/bin/Windows/Content/TheMap.xnb","TextureProcessor","Texture2DContent",2319759,3840085,0,0853231
+"C:/Users/ilkap/Documents/GitHub/Tower Defence/Tower Defence/Content/TheMapRender.png","C:/Users/ilkap/Documents/GitHub/Tower Defence/Tower Defence/Content/bin/Windows/Content/TheMapRender.xnb","TextureProcessor","Texture2DContent",867834,3840085,0,0651222
+"C:/Users/ilkap/Documents/GitHub/Tower Defence/Tower Defence/Content/Tower.png","C:/Users/ilkap/Documents/GitHub/Tower Defence/Tower Defence/Content/bin/Windows/Content/Tower.xnb","TextureProcessor","Texture2DContent",315,6485,0,0016688
