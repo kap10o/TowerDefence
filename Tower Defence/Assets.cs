@@ -6,13 +6,14 @@ namespace Tower_Defence
 {
     internal class Assets
     {
-        public static Texture2D backgroundTexture, enemyTexture, towerTexture;
+        public static Texture2D backgroundTexture, enemyTexture, towerTexture, projectileTexture;
 
         public static void LoadTextures()
         {
             backgroundTexture = Globals.Content.Load<Texture2D>("TheMap");
             enemyTexture = Globals.Content.Load<Texture2D>("Enemy");
             towerTexture = Globals.Content.Load<Texture2D>("Tower");
+            projectileTexture = Globals.Content.Load<Texture2D>("ProjectileTexture1");
         }
     }
 }

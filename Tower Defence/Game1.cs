@@ -18,18 +18,20 @@ namespace Tower_Defence
 
         private Texture2D texturebg;
         private RenderTarget2D _renderTarget;
-        List<GameObject> placedObjects = new List<GameObject>();
-        GameObject currentObject;
 
         private readonly int width = 1200;
         private readonly int height = 800;
 
         private List<Enemy> enemies = new List<Enemy>(); // List to hold ball objects
         private float nextEnemyReleaseTime = 0; // Time when next ball should be released
-        private float enemyReleaseInterval = 1000; // Interval between releasing balls (in milliseconds)
-
+        private float enemyReleaseInterval = 2000; // Interval between releasing balls (in milliseconds)
+        //List<GameObject> placedObjects = new List<GameObject>();
+        //GameObject currentObject;
+        private List<Tower> towers = new List<Tower>();
+        Tower currentTower;
+        private Texture2D towerTexture;
+        Texture2D projectileTexture;
         public float texPos;
-
 
         public Game1()
         {
@@ -45,12 +47,13 @@ namespace Tower_Defence
             _graphics.ApplyChanges();
             _renderTarget = new RenderTarget2D(GraphicsDevice,
             Window.ClientBounds.Width, Window.ClientBounds.Height);
-
+            
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
+            
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             path = new SimplePath(_graphics.GraphicsDevice);
             //path.generateDefaultPath(); //behövs inte, finns redan en från början
@@ -60,6 +63,8 @@ namespace Tower_Defence
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             enemyTexture = Content.Load<Texture2D>("Enemy");
             backgroundTexture = Content.Load<Texture2D>("TheMap");
+            towerTexture = Content.Load<Texture2D>("Tower1");
+            projectileTexture = Content.Load<Texture2D>("projectileTexture2");
 
             //sätter bildens startpunkt till början av kurvan
             texPos = path.beginT;
@@ -91,15 +96,15 @@ namespace Tower_Defence
             path.AddPoint(new Vector2(1050, 413));
             path.AddPoint(new Vector2(1200, 410));
             //path.GetPos(path.beginT);
-            
-            currentObject = new GameObject
-            {
-                texture = Content.Load<Texture2D>("Tower"), // Replace with your actual file name
-                position = Vector2.Zero // You can set the initial position to (0, 0) or any other starting position
-            };
+
+            currentTower = new Tower(
+            texture: Content.Load<Texture2D>("Tower"), // Replace with your actual file name
+            position: Vector2.Zero, // You can set the initial position to (0, 0) or any other starting position
+            projectileTexture: projectileTexture
+            );
 
             // Initialize hitbox after setting the texture
-            currentObject.hitbox = new Rectangle(0, 0, currentObject.texture.Width, currentObject.texture.Height);
+            currentTower.hitbox = new Rectangle(0, 0, currentTower.texture.Width, currentTower.texture.Height);
             texturebg = Content.Load<Texture2D>("TheMapRender");
             DrawOnRenderTarget();
         }
@@ -126,26 +131,28 @@ namespace Tower_Defence
             //förflyttar positionen längs kurvan
             texPos++; //bestämmer hastigheten
             //texPos++;
-            currentObject.position = new Vector2(Mouse.GetState().X, Mouse.GetState().Y);
+            currentTower.position = new Vector2(Mouse.GetState().X, Mouse.GetState().Y);
 
             // Update hitbox for the currentObject
-            currentObject.hitbox = new Rectangle((int)currentObject.position.X, (int)currentObject.position.Y,
-                currentObject.texture.Width, currentObject.texture.Height);
+            currentTower.hitbox = new Rectangle((int)currentTower.position.X, (int)currentTower.position.Y,
+                currentTower.texture.Width, currentTower.texture.Height);
 
             // Check for mouse click to place the object
             if (Mouse.GetState().LeftButton == ButtonState.Pressed)
             {
-                // Check if the object can be placed
-                if (CanPlace(currentObject))
+                // Create a new Tower instance at the mouse position
+                Tower newTower = new Tower(towerTexture, Mouse.GetState().Position.ToVector2(), projectileTexture);
+
+                // Check if the new tower can be placed
+                if (CanPlace(newTower))
                 {
-                    // Add the object to the list of placed objects
-                    placedObjects.Add(new GameObject
-                    {
-                        texture = currentObject.texture,
-                        position = currentObject.position,
-                        hitbox = currentObject.hitbox
-                    });
+                    // Add the new tower to the list of towers
+                    towers.Add(newTower);
                 }
+            }
+            foreach (var tower in towers)
+            {
+                tower.Update(gameTime, enemies); // Pass the list of enemies to each tower
             }
             base.Update(gameTime);
         }
@@ -169,9 +176,15 @@ namespace Tower_Defence
                 Enemy.Draw(_spriteBatch);
             }
             // Draw all placed objects
-            foreach (var obj in placedObjects)
+            foreach (var tower in towers)
             {
-                _spriteBatch.Draw(obj.texture, obj.position, Color.White);
+                _spriteBatch.Draw(tower.texture, tower.position, Color.White);
+
+                // Draw tower projectiles
+                foreach (var projectile in tower.projectiles)
+                {
+                    projectile.Draw(_spriteBatch);
+                }
             }
             _spriteBatch.End();
             base.Draw(gameTime);
@@ -193,21 +206,21 @@ namespace Tower_Defence
             //Sätt GraphicsDevice att åter igen peka på skärmen
             GraphicsDevice.SetRenderTarget(null);
         }
-        public bool CanPlace(GameObject g)
+        public bool CanPlace(Tower t)
         {
-            Color[] pixels = new Color[g.texture.Width * g.texture.Height];
-            Color[] pixels2 = new Color[g.texture.Width * g.texture.Height];
-            g.texture.GetData<Color>(pixels2);
-            _renderTarget.GetData(0, g.hitbox, pixels, 0, pixels.Length);
+            Color[] pixels = new Color[t.texture.Width * t.texture.Height];
+            Color[] pixels2 = new Color[t.texture.Width * t.texture.Height];
+            t.texture.GetData<Color>(pixels2);
+            _renderTarget.GetData(0, t.hitbox, pixels, 0, pixels.Length);
             for (int i = 0; i < pixels.Length; ++i)
             {
                 if (pixels[i].A > 0.0f && pixels2[i].A > 0.0f)
                     return false;
             }
             // So that you can't place any objects where there all ready are ones.
-            foreach (var obj in placedObjects)
+            foreach (var tower in towers)
             {
-                if (g.hitbox.Intersects(obj.hitbox))
+                if (t.hitbox.Intersects(tower.hitbox))
                 {
                     return false;
                 }

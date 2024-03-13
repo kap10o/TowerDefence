@@ -4,12 +4,18 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/ilkap/Documents/GitHub/Tower Defence/Tower Defence/Content/Enemy.png</File>
-    <File>C:/Users/ilkap/Documents/GitHub/Tower Defence/Tower Defence/Content/TheMap.png</File>
-    <File>C:/Users/ilkap/Documents/GitHub/Tower Defence/Tower Defence/Content/TheMapRender.png</File>
-    <File>C:/Users/ilkap/Documents/GitHub/Tower Defence/Tower Defence/Content/Tower.png</File>
+    <File>C:/Users/Tiao/Documents/GitHub/TowerDefence/Tower Defence/Content/Enemy.png</File>
+    <File>C:/Users/Tiao/Documents/GitHub/TowerDefence/Tower Defence/Content/ProjectileTexture1.png</File>
+    <File>C:/Users/Tiao/Documents/GitHub/TowerDefence/Tower Defence/Content/ProjectileTexture2.png</File>
+    <File>C:/Users/Tiao/Documents/GitHub/TowerDefence/Tower Defence/Content/TheMap.png</File>
+    <File>C:/Users/Tiao/Documents/GitHub/TowerDefence/Tower Defence/Content/TheMapRender.png</File>
+    <File>C:/Users/Tiao/Documents/GitHub/TowerDefence/Tower Defence/Content/Tower.png</File>
+    <File>C:/Users/Tiao/Documents/GitHub/TowerDefence/Tower Defence/Content/Tower1.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
