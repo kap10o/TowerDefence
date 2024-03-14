@@ -6,31 +6,36 @@ public class Enemy
 {
     private Texture2D texture;
     private SimplePath path;
-    private float texPos;
+    public float texPos;
     private Vector2 position; // Position of the enemy
     private Rectangle boundingBox; // Bounding box for collision detection
-    private bool isAlive = true; // Flag indicating whether the enemy is alive
+    public bool isAlive = true; // Flag indicating whether the enemy is alive
+    private int hp; // Hit points of the enemy
+    public float Speed { get; set; }
+    public bool effectApplied { get; set; }
 
     public Vector2 Position { get { return position; } }
-
     public Rectangle BoundingBox { get { return boundingBox; } }
-
     public bool IsAlive { get { return isAlive; } }
+    public int HP { get { return hp; } }
 
-    public Enemy(Texture2D texture, SimplePath path, float initialPosition)
+    public Enemy(Texture2D texture, SimplePath path, float initialPosition, int initialHP, float speed)
     {
         this.texture = texture;
         this.path = path;
         this.texPos = initialPosition;
         this.position = path.GetPos(initialPosition);
         this.boundingBox = new Rectangle((int)position.X, (int)position.Y, texture.Width, texture.Height);
+        this.hp = initialHP; // Initialize HP
+        this.Speed = speed;
+        this.effectApplied = false;
     }
 
     public void Update(GameTime gameTime)
     {
         if (isAlive)
         {
-            texPos += 1; // Adjust speed as needed
+            texPos += Speed; // Adjust speed as needed
             position = path.GetPos(texPos);
             boundingBox.Location = position.ToPoint();
         }
@@ -46,8 +51,12 @@ public class Enemy
     }
 
     // Method to check if the enemy is hit by a projectile
-    public void Hit()
+    public virtual void Hit(int damage)
     {
-        isAlive = false;
+        hp -= damage; // Reduce HP by damage
+        if (hp <= 0)
+        {
+            isAlive = false; // If HP drops to or below 0, mark the enemy as dead
+        }
     }
 }

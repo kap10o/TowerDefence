@@ -42,6 +42,15 @@ namespace Tower_Defence
                 velocity = direction;
                 position += velocity * speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
                 boundingBox.Location = position.ToPoint();
+
+                // Check for collision with the target enemy
+                if (boundingBox.Intersects(target.BoundingBox))
+                {
+                    // Apply damage to the enemy
+                    target.Hit(damage);
+                    // Deactivate the projectile
+                    IsActive = false;
+                }
             }
             else
             {

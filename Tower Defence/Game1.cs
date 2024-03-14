@@ -16,9 +16,11 @@ namespace Tower_Defence
         private readonly GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
+        private EconomySystem economy;
         ParticleSystem particleSystem;
         Texture2D tdLogoTexture;
 
+        Texture2D strongEnemyTexture;
         Texture2D enemyTexture;
         Texture2D backgroundTexture;
         SimplePath path;
@@ -32,19 +34,26 @@ namespace Tower_Defence
 
         private List<Enemy> enemies = new List<Enemy>(); // List to hold ball objects
         private float nextEnemyReleaseTime = 0; // Time when next ball should be released
-        private float enemyReleaseInterval = 2000; // Interval between releasing balls (in milliseconds)
+        private float enemyReleaseInterval = 1000; // Interval between releasing balls (in milliseconds)
+        private bool spawnRegularEnemy = true;
+        private float enemySpeed = 1.0f;
 
         private List<Tower> towers = new List<Tower>();
         Tower currentTower;
         Texture2D towerTexture;
+        Texture2D slowtowerTexture;
         Texture2D projectileTexture;
+        Texture2D projectileTextureblue;
         public float texPos;
+
+        
 
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
+            economy = new EconomySystem();
         }
 
         protected override void Initialize()
@@ -69,9 +78,13 @@ namespace Tower_Defence
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             tdLogoTexture = Content.Load<Texture2D>("TDLogo");
             enemyTexture = Content.Load<Texture2D>("Enemy");
+            strongEnemyTexture = Content.Load<Texture2D>("StrongEnemy");
             backgroundTexture = Content.Load<Texture2D>("TheMap");
             towerTexture = Content.Load<Texture2D>("Tower1");
+            slowtowerTexture = Content.Load<Texture2D>("Tower2");
             projectileTexture = Content.Load<Texture2D>("projectileTexture2");
+            projectileTextureblue = Content.Load<Texture2D>("projectileTexture1");
+
 
             //sätter bildens startpunkt till början av kurvan
             texPos = path.beginT;
@@ -134,6 +147,9 @@ namespace Tower_Defence
                     {
                         particleSystem.EmitterLocation = new Vector2(Mouse.GetState().X, Mouse.GetState().Y);
                         particleSystem.Update();
+                        if (myForm.changeState == true)
+
+                            currentGameState = GameState.Game;
                     }
                     break;
                 case GameState.Game:
@@ -142,14 +158,26 @@ namespace Tower_Defence
                         nextEnemyReleaseTime -= (float)gameTime.ElapsedGameTime.TotalMilliseconds;
                         if (nextEnemyReleaseTime <= 0)
                         {
-                            enemies.Add(new Enemy(enemyTexture, path, path.beginT)); // Release a new ball
-                            nextEnemyReleaseTime = enemyReleaseInterval; // Reset timer
+                            // Release a new enemy
+                            if (spawnRegularEnemy)
+                            {
+                                enemies.Add(new Enemy(enemyTexture, path, path.beginT, 3, enemySpeed));
+                            }
+                            else
+                            {
+                                enemies.Add(new StrongEnemy(strongEnemyTexture, path, path.beginT, enemySpeed));
+                            }
+
+                            // Toggle the flag for the next spawn
+                            spawnRegularEnemy = !spawnRegularEnemy;
+
+                            nextEnemyReleaseTime = enemyReleaseInterval;
                         }
 
-                        // Update all balls
-                        foreach (var Enemy in enemies)
+                        // Update all enemies
+                        foreach (var enemy in enemies)
                         {
-                            Enemy.Update(gameTime);
+                            enemy.Update(gameTime);
                         }
 
 
@@ -169,7 +197,19 @@ namespace Tower_Defence
                             Tower newTower = new Tower(towerTexture, Mouse.GetState().Position.ToVector2(), projectileTexture);
 
                             // Check if the new tower can be placed
-                            if (CanPlace(newTower))
+                            if (CanPlace(newTower) && economy.DeductCoins(60))
+                            {
+                                // Add the new tower to the list of towers
+                                towers.Add(newTower);
+                            }
+                        }
+                        if (Mouse.GetState().RightButton == ButtonState.Pressed)
+                        {
+                            // Create a new Tower instance at the mouse position
+                            Tower newTower = new SlowTower(slowtowerTexture, Mouse.GetState().Position.ToVector2(), projectileTextureblue);
+
+                            // Check if the new tower can be placed
+                            if (CanPlace(newTower) && economy.DeductCoins(40))
                             {
                                 // Add the new tower to the list of towers
                                 towers.Add(newTower);

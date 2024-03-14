@@ -12,9 +12,9 @@ namespace Tower_Defence
         public Vector2 position;
         public Rectangle hitbox;
         public List<Projectile> projectiles;
-        private float fireCooldown = 1.0f; // Cooldown in seconds between each shot
+        internal float fireCooldown = 1.0f; // Cooldown in seconds between each shot
         public float AttackRange = 100f;
-        private float timeSinceLastShot = 0;
+        internal float timeSinceLastShot = 0;
 
         public Tower(Texture2D texture,  Vector2 position, Texture2D projectileTexture)
         {
@@ -25,7 +25,7 @@ namespace Tower_Defence
             this.hitbox = new Rectangle((int)position.X, (int)position.Y, texture.Width, texture.Height);
         }
 
-        public void Update(GameTime gameTime, List<Enemy> enemies)
+        public virtual void Update(GameTime gameTime, List<Enemy> enemies)
         {
             timeSinceLastShot += (float)gameTime.ElapsedGameTime.TotalSeconds;
 
@@ -57,7 +57,7 @@ namespace Tower_Defence
             projectiles.RemoveAll(p => !p.IsActive);
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public virtual void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(texture, position, Color.White);
 
@@ -75,7 +75,7 @@ namespace Tower_Defence
             Vector2 direction = Vector2.Normalize(target.Position - initialPosition);
 
             // Create the projectile at the initial position
-            Projectile projectile = new Projectile(projectileTexture, initialPosition, direction, 10.0f, 10);
+            Projectile projectile = new Projectile(projectileTexture, initialPosition, direction, 10.0f, 1);
             projectiles.Add(projectile);
         }
     }

@@ -133,3 +133,56 @@ C:\Users\Tiao\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windo
 C:\Users\Tiao\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\WinForm.exe
 C:\Users\Tiao\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\WinForm.pdb
 C:\Users\Tiao\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\WinForm.exe.config
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\Deffont.xnb
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\Enemy.xnb
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\ProjectileTexture1.xnb
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\ProjectileTexture2.xnb
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\TDLogo.xnb
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\TheMap.xnb
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\TheMapRender.xnb
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\Tower.xnb
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\Tower1.xnb
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Tower Defence.exe
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Tower Defence.deps.json
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Tower Defence.runtimeconfig.json
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Tower Defence.dll
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Tower Defence.pdb
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.dll
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\MonoGame.Framework.dll
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\SharpDX.dll
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\SharpDX.Direct2D1.dll
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\SharpDX.Direct3D11.dll
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\SharpDX.Direct3D9.dll
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\SharpDX.DXGI.dll
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\SharpDX.Mathematics.dll
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\SharpDX.MediaFoundation.dll
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\SharpDX.XAudio2.dll
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\SharpDX.XInput.dll
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\runtimes\debian-x64\native\libuv.so
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\runtimes\fedora-x64\native\libuv.so
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\runtimes\opensuse-x64\native\libuv.so
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\runtimes\osx\native\libuv.dylib
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\runtimes\rhel-x64\native\libuv.so
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\runtimes\win7-arm\native\libuv.dll
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\runtimes\win7-x64\native\libuv.dll
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\runtimes\win7-x86\native\libuv.dll
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Spline.dll
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\WinForm.exe
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\WinForm.pdb
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\WinForm.exe.config
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\obj\Debug\net6.0-windows\Tower Defence.csproj.AssemblyReference.cache
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\obj\Debug\net6.0-windows\Tower Defence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\obj\Debug\net6.0-windows\Tower Defence.AssemblyInfoInputs.cache
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\obj\Debug\net6.0-windows\Tower Defence.AssemblyInfo.cs
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\obj\Debug\net6.0-windows\Tower Defence.csproj.CoreCompileInputs.cache
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\obj\Debug\net6.0-windows\Tower Defence.sourcelink.json
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\obj\Debug\net6.0-windows\Tower De.0AD96954.Up2Date
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\obj\Debug\net6.0-windows\Tower Defence.dll
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\obj\Debug\net6.0-windows\refint\Tower Defence.dll
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\obj\Debug\net6.0-windows\Tower Defence.pdb
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\obj\Debug\net6.0-windows\Tower Defence.genruntimeconfig.cache
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\obj\Debug\net6.0-windows\ref\Tower Defence.dll
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\StrongEnemy.xnb
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\Tower2.xnb

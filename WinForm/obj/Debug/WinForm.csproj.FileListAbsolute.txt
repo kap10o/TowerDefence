@@ -8,3 +8,13 @@ C:\Users\Tiao\Documents\GitHub\TowerDefence\WinForm\obj\Debug\WinForm.csproj.Gen
 C:\Users\Tiao\Documents\GitHub\TowerDefence\WinForm\obj\Debug\WinForm.csproj.CoreCompileInputs.cache
 C:\Users\Tiao\Documents\GitHub\TowerDefence\WinForm\obj\Debug\WinForm.exe
 C:\Users\Tiao\Documents\GitHub\TowerDefence\WinForm\obj\Debug\WinForm.pdb
+C:\Users\ilkap\Documents\GitHub\TowerDefence\WinForm\obj\Debug\WinForm.csproj.AssemblyReference.cache
+C:\Users\ilkap\Documents\GitHub\TowerDefence\WinForm\obj\Debug\WinForm.Form1.resources
+C:\Users\ilkap\Documents\GitHub\TowerDefence\WinForm\obj\Debug\WinForm.Properties.Resources.resources
+C:\Users\ilkap\Documents\GitHub\TowerDefence\WinForm\obj\Debug\WinForm.csproj.GenerateResource.cache
+C:\Users\ilkap\Documents\GitHub\TowerDefence\WinForm\obj\Debug\WinForm.csproj.CoreCompileInputs.cache
+C:\Users\ilkap\Documents\GitHub\TowerDefence\WinForm\obj\Debug\WinForm.exe
+C:\Users\ilkap\Documents\GitHub\TowerDefence\WinForm\obj\Debug\WinForm.pdb
+C:\Users\ilkap\Documents\GitHub\TowerDefence\WinForm\bin\Debug\WinForm.exe.config
+C:\Users\ilkap\Documents\GitHub\TowerDefence\WinForm\bin\Debug\WinForm.exe
+C:\Users\ilkap\Documents\GitHub\TowerDefence\WinForm\bin\Debug\WinForm.pdb
