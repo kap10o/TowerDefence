@@ -1,17 +1,22 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using SharpDX.Direct3D9;
 using Spline;
 using System;
 using System.Collections.Generic;
 
 namespace Tower_Defence
 {
+    public enum GameState { Start, Game, GameOver}
     public class Game1 : Game
     {
+        public GameState previousGameState;
+        public GameState currentGameState = GameState.Start;
         private readonly GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+
+        ParticleSystem particleSystem;
+
         Texture2D enemyTexture;
         Texture2D backgroundTexture;
         SimplePath path;
@@ -25,11 +30,10 @@ namespace Tower_Defence
         private List<Enemy> enemies = new List<Enemy>(); // List to hold ball objects
         private float nextEnemyReleaseTime = 0; // Time when next ball should be released
         private float enemyReleaseInterval = 2000; // Interval between releasing balls (in milliseconds)
-        //List<GameObject> placedObjects = new List<GameObject>();
-        //GameObject currentObject;
+
         private List<Tower> towers = new List<Tower>();
         Tower currentTower;
-        private Texture2D towerTexture;
+        Texture2D towerTexture;
         Texture2D projectileTexture;
         public float texPos;
 
@@ -107,86 +111,116 @@ namespace Tower_Defence
             currentTower.hitbox = new Rectangle(0, 0, currentTower.texture.Width, currentTower.texture.Height);
             texturebg = Content.Load<Texture2D>("TheMapRender");
             DrawOnRenderTarget();
+
+            List<Texture2D> textures = new List<Texture2D>();
+            textures.Add(Content.Load<Texture2D>("Enemy"));
+            particleSystem = new ParticleSystem(textures, new Vector2(400, 240));
         }
 
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-            // Update timer and release balls if necessary
-            nextEnemyReleaseTime -= (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            if (nextEnemyReleaseTime <= 0)
+
+            switch (currentGameState)
             {
-                enemies.Add(new Enemy(enemyTexture, path, path.beginT)); // Release a new ball
-                nextEnemyReleaseTime = enemyReleaseInterval; // Reset timer
-            }
+                case GameState.Start:
+                    {
+                        particleSystem.EmitterLocation = new Vector2(Mouse.GetState().X, Mouse.GetState().Y);
+                        particleSystem.Update();
+                    }
+                    break;
+                case GameState.Game:
+                    {
+                        // Update timer and release balls if necessary
+                        nextEnemyReleaseTime -= (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                        if (nextEnemyReleaseTime <= 0)
+                        {
+                            enemies.Add(new Enemy(enemyTexture, path, path.beginT)); // Release a new ball
+                            nextEnemyReleaseTime = enemyReleaseInterval; // Reset timer
+                        }
 
-            // Update all balls
-            foreach (var Enemy in enemies)
-            {
-                Enemy.Update(gameTime);
-            }
+                        // Update all balls
+                        foreach (var Enemy in enemies)
+                        {
+                            Enemy.Update(gameTime);
+                        }
 
 
-            //förflyttar positionen längs kurvan
-            texPos++; //bestämmer hastigheten
-            //texPos++;
-            currentTower.position = new Vector2(Mouse.GetState().X, Mouse.GetState().Y);
+                        //förflyttar positionen längs kurvan
+                        texPos++; //bestämmer hastigheten
+                                  //texPos++;
+                        currentTower.position = new Vector2(Mouse.GetState().X, Mouse.GetState().Y);
 
-            // Update hitbox for the currentObject
-            currentTower.hitbox = new Rectangle((int)currentTower.position.X, (int)currentTower.position.Y,
-                currentTower.texture.Width, currentTower.texture.Height);
+                        // Update hitbox for the currentObject
+                        currentTower.hitbox = new Rectangle((int)currentTower.position.X, (int)currentTower.position.Y,
+                            currentTower.texture.Width, currentTower.texture.Height);
 
-            // Check for mouse click to place the object
-            if (Mouse.GetState().LeftButton == ButtonState.Pressed)
-            {
-                // Create a new Tower instance at the mouse position
-                Tower newTower = new Tower(towerTexture, Mouse.GetState().Position.ToVector2(), projectileTexture);
+                        // Check for mouse click to place the object
+                        if (Mouse.GetState().LeftButton == ButtonState.Pressed)
+                        {
+                            // Create a new Tower instance at the mouse position
+                            Tower newTower = new Tower(towerTexture, Mouse.GetState().Position.ToVector2(), projectileTexture);
 
-                // Check if the new tower can be placed
-                if (CanPlace(newTower))
-                {
-                    // Add the new tower to the list of towers
-                    towers.Add(newTower);
-                }
-            }
-            foreach (var tower in towers)
-            {
-                tower.Update(gameTime, enemies); // Pass the list of enemies to each tower
+                            // Check if the new tower can be placed
+                            if (CanPlace(newTower))
+                            {
+                                // Add the new tower to the list of towers
+                                towers.Add(newTower);
+                            }
+                        }
+                        foreach (var tower in towers)
+                        {
+                            tower.Update(gameTime, enemies); // Pass the list of enemies to each tower
+                        }
+                        break;
+                    }
             }
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            _spriteBatch.Begin();
-            // Draw the render target
-            _spriteBatch.Draw(_renderTarget, Vector2.Zero, Color.White);
-
-            _spriteBatch.Draw(backgroundTexture, new Rectangle(0, 0, width, height), Color.White);
-            //ritar ut kurvan
-            //path.Draw(_spriteBatch);
-            //ritar ut punkterna på kurvan
-            //path.DrawPoints(_spriteBatch);
-            //ritar ut trollkarlen på kurvan
-            foreach (var Enemy in enemies)
+            switch (currentGameState)
             {
-                Enemy.Draw(_spriteBatch);
-            }
-            // Draw all placed objects
-            foreach (var tower in towers)
-            {
-                _spriteBatch.Draw(tower.texture, tower.position, Color.White);
+                case GameState.Start:
+                    {
+                        GraphicsDevice.Clear(Color.DarkGreen);
+                        particleSystem.Draw(_spriteBatch);
+                    }
+                    break;
+                case GameState.Game:
+                    {
+                        GraphicsDevice.Clear(Color.CornflowerBlue);
+                        _spriteBatch.Begin();
+                        // Draw the render target
+                        _spriteBatch.Draw(_renderTarget, Vector2.Zero, Color.White);
 
-                // Draw tower projectiles
-                foreach (var projectile in tower.projectiles)
-                {
-                    projectile.Draw(_spriteBatch);
-                }
+                        _spriteBatch.Draw(backgroundTexture, new Rectangle(0, 0, width, height), Color.White);
+                        //ritar ut kurvan
+                        //path.Draw(_spriteBatch);
+                        //ritar ut punkterna på kurvan
+                        //path.DrawPoints(_spriteBatch);
+                        //ritar ut trollkarlen på kurvan
+                        foreach (var Enemy in enemies)
+                        {
+                            Enemy.Draw(_spriteBatch);
+                        }
+                        // Draw all placed objects
+                        foreach (var tower in towers)
+                        {
+                            _spriteBatch.Draw(tower.texture, tower.position, Color.White);
+
+                            // Draw tower projectiles
+                            foreach (var projectile in tower.projectiles)
+                            {
+                                projectile.Draw(_spriteBatch);
+                            }
+                        }
+                        _spriteBatch.End();
+                    }
+                    break;
             }
-            _spriteBatch.End();
             base.Draw(gameTime);
 
         }
