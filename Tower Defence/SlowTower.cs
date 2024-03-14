@@ -1,17 +1,19 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 using System.Collections.Generic;
 
 namespace Tower_Defence
 {
     public class SlowTower : Tower
     {
+        private List<Enemy> affectedEnemies;
 
         public SlowTower(Texture2D texture, Vector2 position, Texture2D projectileTexture)
             : base(texture, position, projectileTexture)
         {
-            // Additional initialization if needed
+            affectedEnemies = new List<Enemy>();
         }
 
         public override void Update(GameTime gameTime, List<Enemy> enemies)
@@ -26,16 +28,16 @@ namespace Tower_Defence
                     // Check if the enemy is within range of the tower
                     if (Vector2.Distance(position, enemy.Position) < AttackRange)
                     {
-                        // Apply slowing effect if it hasn't been applied yet
-                        if (!enemy.effectApplied)
+                        if (!affectedEnemies.Contains(enemy) && Vector2.Distance(position, enemy.Position) < AttackRange)
                         {
-                            enemy.Speed *= 0.5f; // Reduce enemy speed by half
-                            enemy.effectApplied = true; // Set flag to true to indicate effect has been applied
+                            // Apply slowing effect if it hasn't been applied yet
+                            enemy.Speed -= 0.5f; // Reduce enemy speed by half
+                            affectedEnemies.Add(enemy); // Add enemy to list of affected enemies
                         }
-
                         // Fire a projectile at the enemy
                         FireProjectile(enemy);
                         timeSinceLastShot = 0; // Reset shot timer
+                        // Apply slowing effect if it hasn't been applied yet
                         break; // Only fire at one enemy per update
                     }
                 }

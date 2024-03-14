@@ -25,6 +25,7 @@ namespace Tower_Defence
         Texture2D backgroundTexture;
         SimplePath path;
         Form1 myForm;
+        Texture2D heartTexture;
 
         private Texture2D texturebg;
         private RenderTarget2D _renderTarget;
@@ -84,6 +85,7 @@ namespace Tower_Defence
             slowtowerTexture = Content.Load<Texture2D>("Tower2");
             projectileTexture = Content.Load<Texture2D>("projectileTexture2");
             projectileTextureblue = Content.Load<Texture2D>("projectileTexture1");
+            heartTexture = Content.Load<Texture2D>("heart");
 
 
             //sätter bildens startpunkt till början av kurvan
@@ -161,11 +163,11 @@ namespace Tower_Defence
                             // Release a new enemy
                             if (spawnRegularEnemy)
                             {
-                                enemies.Add(new Enemy(enemyTexture, path, path.beginT, 3, enemySpeed));
+                                enemies.Add(new Enemy(enemyTexture, path, path.beginT, 3, enemySpeed, heartTexture));
                             }
                             else
                             {
-                                enemies.Add(new StrongEnemy(strongEnemyTexture, path, path.beginT, enemySpeed));
+                                enemies.Add(new StrongEnemy(strongEnemyTexture, path, path.beginT, enemySpeed, heartTexture));
                             }
 
                             // Toggle the flag for the next spawn

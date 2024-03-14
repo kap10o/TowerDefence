@@ -8,8 +8,8 @@ namespace Tower_Defence
 {
     public class EconomySystem
     {
-        private int coins;
-        private const int startingCoins = 120; // Starting coins for the player
+        private static int coins;
+        private const int startingCoins = 180; // Starting coins for the player
 
         public int Coins { get { return coins; } }
 
@@ -33,7 +33,7 @@ namespace Tower_Defence
         }
 
         // Method to add coins when an enemy is defeated
-        public void AddCoins(int amount)
+        public static void AddCoins(int amount)
         {
             coins += amount;
         }

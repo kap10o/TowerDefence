@@ -186,3 +186,4 @@ C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\obj\Debug\net6.0-wind
 C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\obj\Debug\net6.0-windows\ref\Tower Defence.dll
 C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\StrongEnemy.xnb
 C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\Tower2.xnb
+C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\heart.xnb

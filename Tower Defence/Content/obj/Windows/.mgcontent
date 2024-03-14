@@ -6,6 +6,7 @@
   <SourceFiles>
     <File>C:/Users/ilkap/Documents/GitHub/TowerDefence/Tower Defence/Content/Deffont.spritefont</File>
     <File>C:/Users/ilkap/Documents/GitHub/TowerDefence/Tower Defence/Content/Enemy.png</File>
+    <File>C:/Users/ilkap/Documents/GitHub/TowerDefence/Tower Defence/Content/heart.png</File>
     <File>C:/Users/ilkap/Documents/GitHub/TowerDefence/Tower Defence/Content/ProjectileTexture1.png</File>
     <File>C:/Users/ilkap/Documents/GitHub/TowerDefence/Tower Defence/Content/ProjectileTexture2.png</File>
     <File>C:/Users/ilkap/Documents/GitHub/TowerDefence/Tower Defence/Content/StrongEnemy.png</File>
@@ -17,6 +18,7 @@
     <File>C:/Users/ilkap/Documents/GitHub/TowerDefence/Tower Defence/Content/Tower2.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
