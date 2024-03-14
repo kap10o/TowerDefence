@@ -2485,6 +2485,15 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "WinForm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/WinForm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WinForm.dll": {}
+        }
       }
     }
   },
@@ -7515,12 +7524,18 @@
         "system.xml.xpath.xdocument.4.0.1.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "WinForm/1.0.0": {
+      "type": "project",
+      "path": "../WinForm/WinForm.csproj",
+      "msbuildProject": "../WinForm/WinForm.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
       "MonoGame.Content.Builder.Task >= 3.8.1.303",
-      "MonoGame.Framework.WindowsDX >= 3.8.1.303"
+      "MonoGame.Framework.WindowsDX >= 3.8.1.303",
+      "WinForm >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -7549,7 +7564,11 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\WinForm\\WinForm.csproj": {
+              "projectPath": "C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\WinForm\\WinForm.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

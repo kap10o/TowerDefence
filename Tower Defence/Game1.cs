@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using Spline;
 using System;
 using System.Collections.Generic;
+using WinForm;
 
 namespace Tower_Defence
 {
@@ -16,10 +17,12 @@ namespace Tower_Defence
         private SpriteBatch _spriteBatch;
 
         ParticleSystem particleSystem;
+        Texture2D tdLogoTexture;
 
         Texture2D enemyTexture;
         Texture2D backgroundTexture;
         SimplePath path;
+        Form1 myForm;
 
         private Texture2D texturebg;
         private RenderTarget2D _renderTarget;
@@ -51,7 +54,6 @@ namespace Tower_Defence
             _graphics.ApplyChanges();
             _renderTarget = new RenderTarget2D(GraphicsDevice,
             Window.ClientBounds.Width, Window.ClientBounds.Height);
-            
             base.Initialize();
         }
 
@@ -65,6 +67,7 @@ namespace Tower_Defence
             path.Clean(); // tar bort alla punkter
 
             _spriteBatch = new SpriteBatch(GraphicsDevice);
+            tdLogoTexture = Content.Load<Texture2D>("TDLogo");
             enemyTexture = Content.Load<Texture2D>("Enemy");
             backgroundTexture = Content.Load<Texture2D>("TheMap");
             towerTexture = Content.Load<Texture2D>("Tower1");
@@ -115,12 +118,15 @@ namespace Tower_Defence
             List<Texture2D> textures = new List<Texture2D>();
             textures.Add(Content.Load<Texture2D>("Enemy"));
             particleSystem = new ParticleSystem(textures, new Vector2(400, 240));
+
+            myForm = new Form1();
+            myForm.Show();
         }
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-                this.Exit();
+            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+                Exit();
 
             switch (currentGameState)
             {
@@ -186,6 +192,9 @@ namespace Tower_Defence
                 case GameState.Start:
                     {
                         GraphicsDevice.Clear(Color.DarkGreen);
+                        _spriteBatch.Begin();
+                        _spriteBatch.Draw(tdLogoTexture, Vector2.Zero, Color.White);
+                        _spriteBatch.End();
                         particleSystem.Draw(_spriteBatch);
                     }
                     break;

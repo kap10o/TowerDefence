@@ -27,7 +27,11 @@
         "frameworks": {
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\WinForm\\WinForm.csproj": {
+                "projectPath": "C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\WinForm\\WinForm.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -75,6 +79,21 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
         }
+      }
+    },
+    "C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\WinForm\\WinForm.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\WinForm\\WinForm.csproj",
+        "projectName": "WinForm",
+        "projectPath": "C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\WinForm\\WinForm.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
       }
     }
   }

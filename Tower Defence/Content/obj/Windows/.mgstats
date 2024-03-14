@@ -1,2 +1,2 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/Tiao/Documents/GitHub/TowerDefence/Tower Defence/Content/Tower1.png","C:/Users/Tiao/Documents/GitHub/TowerDefence/Tower Defence/Content/bin/Windows/Tower1.xnb","TextureProcessor","Texture2DContent",271,6485,0,6201817
+"C:/Users/Tiao/Documents/GitHub/TowerDefence/Tower Defence/Content/Deffont.spritefont","C:/Users/Tiao/Documents/GitHub/TowerDefence/Tower Defence/Content/bin/Windows/Deffont.xnb","FontDescriptionProcessor","SpriteFontContent",2065,37919,0,2247729

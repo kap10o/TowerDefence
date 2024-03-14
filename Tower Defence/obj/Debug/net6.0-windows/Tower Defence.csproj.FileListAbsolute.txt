@@ -128,3 +128,8 @@ C:\Users\Tiao\Documents\GitHub\TowerDefence\Tower Defence\obj\Debug\net6.0-windo
 C:\Users\Tiao\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\ProjectileTexture1.xnb
 C:\Users\Tiao\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\ProjectileTexture2.xnb
 C:\Users\Tiao\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\Tower1.xnb
+C:\Users\Tiao\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\TDLogo.xnb
+C:\Users\Tiao\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\Deffont.xnb
+C:\Users\Tiao\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\WinForm.exe
+C:\Users\Tiao\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\WinForm.pdb
+C:\Users\Tiao\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\WinForm.exe.config
