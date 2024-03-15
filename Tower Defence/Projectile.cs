@@ -9,7 +9,7 @@ namespace Tower_Defence
     {
         private Texture2D texture;
         private Vector2 position;
-        private Vector2 velocity; // New velocity member
+        private Vector2 velocity;
         private float speed;
         private int damage;
         private Rectangle boundingBox;
@@ -21,7 +21,7 @@ namespace Tower_Defence
         {
             this.texture = texture;
             this.position = position;
-            this.velocity = direction * speed; // Calculate velocity from direction and speed
+            this.velocity = direction * speed;
             this.speed = speed * 30;
             this.damage = damage;
             IsActive = true;
@@ -43,12 +43,9 @@ namespace Tower_Defence
                 position += velocity * speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
                 boundingBox.Location = position.ToPoint();
 
-                // Check for collision with the target enemy
                 if (boundingBox.Intersects(target.BoundingBox))
                 {
-                    // Apply damage to the enemy
                     target.Hit(damage);
-                    // Deactivate the projectile
                     IsActive = false;
                 }
             }
@@ -83,22 +80,6 @@ namespace Tower_Defence
         {
             Vector2 drawPosition = position - new Vector2(texture.Width / 2, texture.Height / 2);
             spriteBatch.Draw(texture, drawPosition, Color.White);
-        }
-
-
-        public Rectangle GetBoundingBox()
-        {
-            return boundingBox;
-        }
-
-        public int GetDamage()
-        {
-            return damage;
-        }
-
-        public void SetInactive()
-        {
-            IsActive = false;
         }
     }
 }

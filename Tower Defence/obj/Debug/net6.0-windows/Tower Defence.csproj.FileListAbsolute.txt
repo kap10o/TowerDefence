@@ -187,3 +187,7 @@ C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\obj\Debug\net6.0-wind
 C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\StrongEnemy.xnb
 C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\Tower2.xnb
 C:\Users\ilkap\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\heart.xnb
+C:\Users\Tiao\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\heart.xnb
+C:\Users\Tiao\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\StrongEnemy.xnb
+C:\Users\Tiao\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\Tower2.xnb
+C:\Users\Tiao\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\infotab.xnb

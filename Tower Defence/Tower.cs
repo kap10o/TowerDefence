@@ -12,7 +12,7 @@ namespace Tower_Defence
         public Vector2 position;
         public Rectangle hitbox;
         public List<Projectile> projectiles;
-        internal float fireCooldown = 1.0f; // Cooldown in seconds between each shot
+        internal float fireCooldown = 1.0f;
         public float AttackRange = 100f;
         internal float timeSinceLastShot = 0;
 
@@ -29,31 +29,25 @@ namespace Tower_Defence
         {
             timeSinceLastShot += (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            // Check if enough time has passed since last shot
+
             if (timeSinceLastShot >= fireCooldown)
             {
                 foreach (Enemy enemy in enemies)
                 {
-                    // Check if the enemy is within range of the tower
                     if (Vector2.Distance(position, enemy.Position) < AttackRange)
                     {
-                        // Fire a projectile at the enemy
                         FireProjectile(enemy);
-                        timeSinceLastShot = 0; // Reset shot timer
-                        break; // Only fire at one enemy per update
+                        timeSinceLastShot = 0; 
+                        break;
                     }
                 }
             }
-        
-            
 
-            // Update projectiles
             foreach (Projectile projectile in projectiles)
             {
                 projectile.Update(gameTime, enemies);
             }
 
-            // Remove inactive projectiles
             projectiles.RemoveAll(p => !p.IsActive);
         }
 
@@ -61,7 +55,6 @@ namespace Tower_Defence
         {
             spriteBatch.Draw(texture, position, Color.White);
 
-            // Draw projectiles
             foreach (Projectile projectile in projectiles)
             {
                 projectile.Draw(spriteBatch);
@@ -70,11 +63,10 @@ namespace Tower_Defence
 
         private void FireProjectile(Enemy target)
         {
-            // Calculate the initial position of the projectile based on the tower's position and the target enemy's position
-            Vector2 initialPosition = position + new Vector2(texture.Width / 2, texture.Height / 2); // Center of the tower
+            
+            Vector2 initialPosition = position + new Vector2(texture.Width / 2, texture.Height / 2);
             Vector2 direction = Vector2.Normalize(target.Position - initialPosition);
 
-            // Create the projectile at the initial position
             Projectile projectile = new Projectile(projectileTexture, initialPosition, direction, 10.0f, 1);
             projectiles.Add(projectile);
         }

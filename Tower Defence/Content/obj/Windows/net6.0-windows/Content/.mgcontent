@@ -4,20 +4,22 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/ilkap/Documents/GitHub/TowerDefence/Tower Defence/Content/Deffont.spritefont</File>
-    <File>C:/Users/ilkap/Documents/GitHub/TowerDefence/Tower Defence/Content/Enemy.png</File>
-    <File>C:/Users/ilkap/Documents/GitHub/TowerDefence/Tower Defence/Content/heart.png</File>
-    <File>C:/Users/ilkap/Documents/GitHub/TowerDefence/Tower Defence/Content/ProjectileTexture1.png</File>
-    <File>C:/Users/ilkap/Documents/GitHub/TowerDefence/Tower Defence/Content/ProjectileTexture2.png</File>
-    <File>C:/Users/ilkap/Documents/GitHub/TowerDefence/Tower Defence/Content/StrongEnemy.png</File>
-    <File>C:/Users/ilkap/Documents/GitHub/TowerDefence/Tower Defence/Content/TDLogo.png</File>
-    <File>C:/Users/ilkap/Documents/GitHub/TowerDefence/Tower Defence/Content/TheMap.png</File>
-    <File>C:/Users/ilkap/Documents/GitHub/TowerDefence/Tower Defence/Content/TheMapRender.png</File>
-    <File>C:/Users/ilkap/Documents/GitHub/TowerDefence/Tower Defence/Content/Tower.png</File>
-    <File>C:/Users/ilkap/Documents/GitHub/TowerDefence/Tower Defence/Content/Tower1.png</File>
-    <File>C:/Users/ilkap/Documents/GitHub/TowerDefence/Tower Defence/Content/Tower2.png</File>
+    <File>C:/Users/Tiao/Documents/GitHub/TowerDefence/Tower Defence/Content/Deffont.spritefont</File>
+    <File>C:/Users/Tiao/Documents/GitHub/TowerDefence/Tower Defence/Content/Enemy.png</File>
+    <File>C:/Users/Tiao/Documents/GitHub/TowerDefence/Tower Defence/Content/heart.png</File>
+    <File>C:/Users/Tiao/Documents/GitHub/TowerDefence/Tower Defence/Content/infotab.png</File>
+    <File>C:/Users/Tiao/Documents/GitHub/TowerDefence/Tower Defence/Content/ProjectileTexture1.png</File>
+    <File>C:/Users/Tiao/Documents/GitHub/TowerDefence/Tower Defence/Content/ProjectileTexture2.png</File>
+    <File>C:/Users/Tiao/Documents/GitHub/TowerDefence/Tower Defence/Content/StrongEnemy.png</File>
+    <File>C:/Users/Tiao/Documents/GitHub/TowerDefence/Tower Defence/Content/TDLogo.png</File>
+    <File>C:/Users/Tiao/Documents/GitHub/TowerDefence/Tower Defence/Content/TheMap.png</File>
+    <File>C:/Users/Tiao/Documents/GitHub/TowerDefence/Tower Defence/Content/TheMapRender.png</File>
+    <File>C:/Users/Tiao/Documents/GitHub/TowerDefence/Tower Defence/Content/Tower.png</File>
+    <File>C:/Users/Tiao/Documents/GitHub/TowerDefence/Tower Defence/Content/Tower1.png</File>
+    <File>C:/Users/Tiao/Documents/GitHub/TowerDefence/Tower Defence/Content/Tower2.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

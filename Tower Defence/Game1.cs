@@ -18,33 +18,24 @@ namespace Tower_Defence
 
         private EconomySystem economy;
         ParticleSystem particleSystem;
-        Texture2D tdLogoTexture;
-
-        Texture2D strongEnemyTexture;
-        Texture2D enemyTexture;
-        Texture2D backgroundTexture;
+        
         SimplePath path;
         Form1 myForm;
-        Texture2D heartTexture;
-
-        private Texture2D texturebg;
+        
         private RenderTarget2D _renderTarget;
+        private Texture2D texturebg;
 
         private readonly int width = 1200;
         private readonly int height = 800;
 
-        private List<Enemy> enemies = new List<Enemy>(); // List to hold ball objects
-        private float nextEnemyReleaseTime = 0; // Time when next ball should be released
-        private float enemyReleaseInterval = 1000; // Interval between releasing balls (in milliseconds)
+        private List<Enemy> enemies = new List<Enemy>(); 
+        private float nextEnemyReleaseTime = 0; 
+        private float enemyReleaseInterval = 1000;
         private bool spawnRegularEnemy = true;
         private float enemySpeed = 1.0f;
-
+        private SpriteFont deffont;
         private List<Tower> towers = new List<Tower>();
         Tower currentTower;
-        Texture2D towerTexture;
-        Texture2D slowtowerTexture;
-        Texture2D projectileTexture;
-        Texture2D projectileTextureblue;
         public float texPos;
 
         
@@ -64,6 +55,7 @@ namespace Tower_Defence
             _graphics.ApplyChanges();
             _renderTarget = new RenderTarget2D(GraphicsDevice,
             Window.ClientBounds.Width, Window.ClientBounds.Height);
+            Globals.Content = Content;
             base.Initialize();
         }
 
@@ -72,25 +64,13 @@ namespace Tower_Defence
             
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             path = new SimplePath(_graphics.GraphicsDevice);
-            //path.generateDefaultPath(); //behövs inte, finns redan en från början
 
-            path.Clean(); // tar bort alla punkter
+            Assets.LoadAssets();
+            
+            path.Clean();
 
-            _spriteBatch = new SpriteBatch(GraphicsDevice);
-            tdLogoTexture = Content.Load<Texture2D>("TDLogo");
-            enemyTexture = Content.Load<Texture2D>("Enemy");
-            strongEnemyTexture = Content.Load<Texture2D>("StrongEnemy");
-            backgroundTexture = Content.Load<Texture2D>("TheMap");
-            towerTexture = Content.Load<Texture2D>("Tower1");
-            slowtowerTexture = Content.Load<Texture2D>("Tower2");
-            projectileTexture = Content.Load<Texture2D>("projectileTexture2");
-            projectileTextureblue = Content.Load<Texture2D>("projectileTexture1");
-            heartTexture = Content.Load<Texture2D>("heart");
-
-
-            //sätter bildens startpunkt till början av kurvan
             texPos = path.beginT;
-            //path.SetPos(0, Vector2.Zero);
+            
             path.AddPoint(new Vector2(994, 0));
             path.AddPoint(new Vector2(950, 205));
             path.AddPoint(new Vector2(870, 200));
@@ -117,21 +97,21 @@ namespace Tower_Defence
             path.AddPoint(new Vector2(900, 413));
             path.AddPoint(new Vector2(1050, 413));
             path.AddPoint(new Vector2(1200, 410));
-            //path.GetPos(path.beginT);
 
             currentTower = new Tower(
-            texture: Content.Load<Texture2D>("Tower"), // Replace with your actual file name
-            position: Vector2.Zero, // You can set the initial position to (0, 0) or any other starting position
-            projectileTexture: projectileTexture
+            Assets.towerTexture, 
+            position: Vector2.Zero, 
+            projectileTexture: Assets.projectileTexture
             );
 
-            // Initialize hitbox after setting the texture
             currentTower.hitbox = new Rectangle(0, 0, currentTower.texture.Width, currentTower.texture.Height);
-            texturebg = Content.Load<Texture2D>("TheMapRender");
+            texturebg = Assets.texturebg;
             DrawOnRenderTarget();
 
-            List<Texture2D> textures = new List<Texture2D>();
-            textures.Add(Content.Load<Texture2D>("Enemy"));
+            List<Texture2D> textures = new List<Texture2D>
+            {
+                Assets.enemyTexture
+            };
             particleSystem = new ParticleSystem(textures, new Vector2(400, 240));
 
             myForm = new Form1();
@@ -156,70 +136,57 @@ namespace Tower_Defence
                     break;
                 case GameState.Game:
                     {
-                        // Update timer and release balls if necessary
                         nextEnemyReleaseTime -= (float)gameTime.ElapsedGameTime.TotalMilliseconds;
                         if (nextEnemyReleaseTime <= 0)
                         {
-                            // Release a new enemy
                             if (spawnRegularEnemy)
                             {
-                                enemies.Add(new Enemy(enemyTexture, path, path.beginT, 3, enemySpeed, heartTexture));
+                                enemies.Add(new Enemy(Assets.enemyTexture, path, path.beginT, 3, enemySpeed, Assets.heartTexture));
                             }
                             else
                             {
-                                enemies.Add(new StrongEnemy(strongEnemyTexture, path, path.beginT, enemySpeed, heartTexture));
+                                enemies.Add(new StrongEnemy(Assets.strongEnemyTexture, path, path.beginT, enemySpeed, Assets.heartTexture));
                             }
 
-                            // Toggle the flag for the next spawn
                             spawnRegularEnemy = !spawnRegularEnemy;
 
                             nextEnemyReleaseTime = enemyReleaseInterval;
                         }
 
-                        // Update all enemies
                         foreach (var enemy in enemies)
                         {
                             enemy.Update(gameTime);
                         }
+                        
+                        texPos++; 
 
-
-                        //förflyttar positionen längs kurvan
-                        texPos++; //bestämmer hastigheten
-                                  //texPos++;
                         currentTower.position = new Vector2(Mouse.GetState().X, Mouse.GetState().Y);
+                        
+                        currentTower.hitbox = new Rectangle((int)currentTower.position.X, (int)currentTower.position.Y, currentTower.texture.Width, currentTower.texture.Height);
 
-                        // Update hitbox for the currentObject
-                        currentTower.hitbox = new Rectangle((int)currentTower.position.X, (int)currentTower.position.Y,
-                            currentTower.texture.Width, currentTower.texture.Height);
-
-                        // Check for mouse click to place the object
                         if (Mouse.GetState().LeftButton == ButtonState.Pressed)
                         {
-                            // Create a new Tower instance at the mouse position
-                            Tower newTower = new Tower(towerTexture, Mouse.GetState().Position.ToVector2(), projectileTexture);
+                            Tower newTower = new Tower(Assets.towerTexture, Mouse.GetState().Position.ToVector2(), Assets.projectileTexture);
 
-                            // Check if the new tower can be placed
-                            if (CanPlace(newTower) && economy.DeductCoins(60))
-                            {
-                                // Add the new tower to the list of towers
-                                towers.Add(newTower);
-                            }
-                        }
-                        if (Mouse.GetState().RightButton == ButtonState.Pressed)
-                        {
-                            // Create a new Tower instance at the mouse position
-                            Tower newTower = new SlowTower(slowtowerTexture, Mouse.GetState().Position.ToVector2(), projectileTextureblue);
-
-                            // Check if the new tower can be placed
                             if (CanPlace(newTower) && economy.DeductCoins(40))
                             {
-                                // Add the new tower to the list of towers
                                 towers.Add(newTower);
                             }
                         }
+
+                        if (Mouse.GetState().RightButton == ButtonState.Pressed)
+                        {
+                            Tower newTower = new SlowTower(Assets.slowtowerTexture, Mouse.GetState().Position.ToVector2(), Assets.projectileTextureblue);
+
+                            if (CanPlace(newTower) && economy.DeductCoins(60))
+                            {
+                                towers.Add(newTower);
+                            }
+                        }
+
                         foreach (var tower in towers)
                         {
-                            tower.Update(gameTime, enemies); // Pass the list of enemies to each tower
+                            tower.Update(gameTime, enemies);
                         }
                         break;
                     }
@@ -235,7 +202,7 @@ namespace Tower_Defence
                     {
                         GraphicsDevice.Clear(Color.DarkGreen);
                         _spriteBatch.Begin();
-                        _spriteBatch.Draw(tdLogoTexture, Vector2.Zero, Color.White);
+                        _spriteBatch.Draw(Assets.tdLogoTexture, Vector2.Zero, Color.White);
                         _spriteBatch.End();
                         particleSystem.Draw(_spriteBatch);
                     }
@@ -244,30 +211,30 @@ namespace Tower_Defence
                     {
                         GraphicsDevice.Clear(Color.CornflowerBlue);
                         _spriteBatch.Begin();
-                        // Draw the render target
+
                         _spriteBatch.Draw(_renderTarget, Vector2.Zero, Color.White);
 
-                        _spriteBatch.Draw(backgroundTexture, new Rectangle(0, 0, width, height), Color.White);
-                        //ritar ut kurvan
+                        _spriteBatch.Draw(Assets.backgroundTexture, new Rectangle(0, 0, width, height), Color.White);
+
                         //path.Draw(_spriteBatch);
-                        //ritar ut punkterna på kurvan
                         //path.DrawPoints(_spriteBatch);
-                        //ritar ut trollkarlen på kurvan
+
                         foreach (var Enemy in enemies)
                         {
                             Enemy.Draw(_spriteBatch);
                         }
-                        // Draw all placed objects
+
                         foreach (var tower in towers)
                         {
                             _spriteBatch.Draw(tower.texture, tower.position, Color.White);
 
-                            // Draw tower projectiles
                             foreach (var projectile in tower.projectiles)
                             {
                                 projectile.Draw(_spriteBatch);
                             }
                         }
+                        _spriteBatch.Draw(Assets.infoTexture, Vector2.Zero, Color.White);
+                        _spriteBatch.DrawString(Assets.deffont, EconomySystem.Coins.ToString(), new Vector2(60, 20), Color.Black);
                         _spriteBatch.End();
                     }
                     break;
@@ -278,17 +245,13 @@ namespace Tower_Defence
 
         private void DrawOnRenderTarget()
         {
-            //Ändra så att GraphicsDevice ritar mot vårt render target
             GraphicsDevice.SetRenderTarget(_renderTarget);
             GraphicsDevice.Clear(Color.Transparent);
+            
             _spriteBatch.Begin();
-
-            //Rita ut texturen. Den ritas nu ut till vårt render target istället
-            //för på skärmen.
-            _spriteBatch.Draw(texturebg, Vector2.Zero, Color.White);
+            _spriteBatch.Draw(Assets.texturebg, Vector2.Zero, Color.White);
             _spriteBatch.End();
 
-            //Sätt GraphicsDevice att åter igen peka på skärmen
             GraphicsDevice.SetRenderTarget(null);
         }
         public bool CanPlace(Tower t)
@@ -302,7 +265,7 @@ namespace Tower_Defence
                 if (pixels[i].A > 0.0f && pixels2[i].A > 0.0f)
                     return false;
             }
-            // So that you can't place any objects where there all ready are ones.
+
             foreach (var tower in towers)
             {
                 if (t.hitbox.Intersects(tower.hitbox))

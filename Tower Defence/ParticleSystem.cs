@@ -60,11 +60,10 @@ namespace Tower_Defence
             float angle = 0;
             float angularVelocity = 0.1f * (float)(random.NextDouble() * 2 - 1);
 
-            // Set initial color to yellow
             Color startColor = Color.Yellow;
             Color endColor = Color.Red;
 
-            float colorLerpAmount = 1.0f - (float)random.NextDouble(); // Random lerp amount
+            float colorLerpAmount = 1.0f - (float)random.NextDouble();
 
             Color color = Color.Lerp(startColor, endColor, colorLerpAmount);
 
