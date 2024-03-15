@@ -3,24 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\tower defence\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|c:\\users\\tiao\\documents\\github\\towerdefence\\tower defence\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|solutionrelative:tower defence\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\tower defence\\economysystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|solutionrelative:tower defence\\economysystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\tower defence\\globals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|solutionrelative:tower defence\\globals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\tower defence\\assets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|solutionrelative:tower defence\\assets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\tower defence\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|solutionrelative:tower defence\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\tower defence\\slowtower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|solutionrelative:tower defence\\slowtower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\tower defence\\tower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|solutionrelative:tower defence\\tower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\tower defence\\strongenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|solutionrelative:tower defence\\strongenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\tower defence\\economysystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|solutionrelative:tower defence\\economysystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\tower defence\\slowtower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|solutionrelative:tower defence\\slowtower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\tower defence\\strongenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|solutionrelative:tower defence\\strongenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\tower defence\\projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,18 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\tower defence\\particle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|solutionrelative:tower defence\\particle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\tower defence\\globals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|solutionrelative:tower defence\\globals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|c:\\users\\tiao\\documents\\github\\towerdefence\\tower defence\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|solutionrelative:tower defence\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\tower defence\\assets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD3E1DE1-D6BB-49FD-B8D5-7CD54719CAC4}|Tower Defence\\Tower Defence.csproj|solutionrelative:tower defence\\assets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FAA54271-4148-4921-8AE4-F145917E102D}|WinForm\\WinForm.csproj|C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\winform\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -105,7 +105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "Particle.cs",
               "DocumentMoniker": "C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\Tower Defence\\Particle.cs",
               "RelativeDocumentMoniker": "Tower Defence\\Particle.cs",
@@ -113,12 +113,11 @@
               "RelativeToolTip": "Tower Defence\\Particle.cs",
               "ViewState": "AQIAAAcAAAAAAAAAAAA1wA4AAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-14T00:14:36.753Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-14T00:14:36.753Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "ParticleSystem.cs",
               "DocumentMoniker": "C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\Tower Defence\\ParticleSystem.cs",
               "RelativeDocumentMoniker": "Tower Defence\\ParticleSystem.cs",
@@ -126,12 +125,11 @@
               "RelativeToolTip": "Tower Defence\\ParticleSystem.cs",
               "ViewState": "AQIAADUAAAAAAAAAAAAcwEEAAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-14T00:11:21.185Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-14T00:11:21.185Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "Projectile.cs",
               "DocumentMoniker": "C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\Tower Defence\\Projectile.cs",
               "RelativeDocumentMoniker": "Tower Defence\\Projectile.cs",
@@ -139,8 +137,7 @@
               "RelativeToolTip": "Tower Defence\\Projectile.cs",
               "ViewState": "AQIAACYAAAAAAAAAAAAwwFIAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T20:32:18.154Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-13T20:32:18.154Z"
             },
             {
               "$type": "Document",
@@ -150,27 +147,27 @@
               "RelativeDocumentMoniker": "Tower Defence\\SlowTower.cs",
               "ToolTip": "C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\Tower Defence\\SlowTower.cs",
               "RelativeToolTip": "Tower Defence\\SlowTower.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAowDUAAAAAAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAADUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-14T13:49:28.829Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Tower.cs",
               "DocumentMoniker": "C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\Tower Defence\\Tower.cs",
               "RelativeDocumentMoniker": "Tower Defence\\Tower.cs",
               "ToolTip": "C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\Tower Defence\\Tower.cs",
               "RelativeToolTip": "Tower Defence\\Tower.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAgwEQAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-12T18:27:42.232Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "StrongEnemy.cs",
               "DocumentMoniker": "C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\Tower Defence\\StrongEnemy.cs",
               "RelativeDocumentMoniker": "Tower Defence\\StrongEnemy.cs",
@@ -178,31 +175,30 @@
               "RelativeToolTip": "Tower Defence\\StrongEnemy.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-14T13:16:33.515Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-14T13:16:33.515Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 3,
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\Tower Defence\\Enemy.cs",
               "RelativeDocumentMoniker": "Tower Defence\\Enemy.cs",
               "ToolTip": "C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\Tower Defence\\Enemy.cs",
               "RelativeToolTip": "Tower Defence\\Enemy.cs",
-              "ViewState": "AQIAACwAAAAAAAAAAAA8wCQAAAAYAAAA",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAmwEkAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-12T18:25:57.483Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 2,
               "Title": "Assets.cs",
               "DocumentMoniker": "C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\Tower Defence\\Assets.cs",
               "RelativeDocumentMoniker": "Tower Defence\\Assets.cs",
               "ToolTip": "C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\Tower Defence\\Assets.cs",
               "RelativeToolTip": "Tower Defence\\Assets.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-12T18:45:09.831Z",
               "EditorCaption": ""
@@ -215,14 +211,14 @@
               "RelativeDocumentMoniker": "Tower Defence\\Game1.cs",
               "ToolTip": "C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\Tower Defence\\Game1.cs",
               "RelativeToolTip": "Tower Defence\\Game1.cs",
-              "ViewState": "AQIAAEQAAAAAAAAAAAAAAGIAAAAyAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-12T11:15:28.175Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
               "Title": "Globals.cs",
               "DocumentMoniker": "C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\Tower Defence\\Globals.cs",
               "RelativeDocumentMoniker": "Tower Defence\\Globals.cs",
@@ -235,13 +231,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "EconomySystem.cs",
               "DocumentMoniker": "C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\Tower Defence\\EconomySystem.cs",
               "RelativeDocumentMoniker": "Tower Defence\\EconomySystem.cs",
               "ToolTip": "C:\\Users\\Tiao\\Documents\\GitHub\\TowerDefence\\Tower Defence\\EconomySystem.cs",
               "RelativeToolTip": "Tower Defence\\EconomySystem.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAAAAAA",
+              "ViewState": "AQIAABQAAAAAAAAAAAA9wBQAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-14T14:16:05.126Z",
               "EditorCaption": ""

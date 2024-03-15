@@ -68,4 +68,8 @@ public class Enemy
             EconomySystem.AddCoins(10);
         }
     }
+    public bool HasReachedEnd(Vector2 endPoint, float tolerance = 1.0f)
+    {
+        return Vector2.DistanceSquared(position, endPoint) < tolerance * tolerance;
+    }
 }

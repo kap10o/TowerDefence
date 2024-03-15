@@ -191,3 +191,4 @@ C:\Users\Tiao\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windo
 C:\Users\Tiao\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\StrongEnemy.xnb
 C:\Users\Tiao\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\Tower2.xnb
 C:\Users\Tiao\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\infotab.xnb
+C:\Users\Tiao\Documents\GitHub\TowerDefence\Tower Defence\bin\Debug\net6.0-windows\Content\nowaydude.xnb

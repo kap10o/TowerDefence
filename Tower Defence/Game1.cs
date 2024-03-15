@@ -37,7 +37,7 @@ namespace Tower_Defence
         private List<Tower> towers = new List<Tower>();
         Tower currentTower;
         public float texPos;
-
+        float endPos;
         
 
         public Game1()
@@ -97,7 +97,7 @@ namespace Tower_Defence
             path.AddPoint(new Vector2(900, 413));
             path.AddPoint(new Vector2(1050, 413));
             path.AddPoint(new Vector2(1200, 410));
-
+            endPos = path.endT;
             currentTower = new Tower(
             Assets.towerTexture, 
             position: Vector2.Zero, 
@@ -156,8 +156,11 @@ namespace Tower_Defence
                         foreach (var enemy in enemies)
                         {
                             enemy.Update(gameTime);
+                            if (enemy.HasReachedEnd(new Vector2(1200,410)))
+                            {
+                                currentGameState = GameState.GameOver; break;
+                            }
                         }
-                        
                         texPos++; 
 
                         currentTower.position = new Vector2(Mouse.GetState().X, Mouse.GetState().Y);
@@ -190,6 +193,11 @@ namespace Tower_Defence
                         }
                         break;
                     }
+                case GameState.GameOver:
+                    {
+                        
+                    }
+                    break;
             }
             base.Update(gameTime);
         }
@@ -235,6 +243,14 @@ namespace Tower_Defence
                         }
                         _spriteBatch.Draw(Assets.infoTexture, Vector2.Zero, Color.White);
                         _spriteBatch.DrawString(Assets.deffont, EconomySystem.Coins.ToString(), new Vector2(60, 20), Color.Black);
+                        _spriteBatch.End();
+                    }
+                    break;
+                case GameState.GameOver:
+                    {
+                        GraphicsDevice.Clear(Color.CornflowerBlue);
+                        _spriteBatch.Begin();
+                        _spriteBatch.Draw(Assets.looseTexure, new Vector2(400, 200), Color.White);
                         _spriteBatch.End();
                     }
                     break;

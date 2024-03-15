@@ -10,7 +10,7 @@ namespace Tower_Defence
         internal static Texture2D slowtowerTexture, towerTexture;
         internal static Texture2D projectileTexture, projectileTextureblue;
         internal static Texture2D enemyTexture, strongEnemyTexture, heartTexture;
-
+        internal static Texture2D looseTexure;
         internal static SpriteFont deffont;
         internal static void LoadAssets()
         {
@@ -25,6 +25,7 @@ namespace Tower_Defence
             projectileTextureblue = Globals.Content.Load<Texture2D>("projectileTexture1");
             heartTexture = Globals.Content.Load<Texture2D>("heart");
             infoTexture = Globals.Content.Load<Texture2D>("infotab");
+            looseTexure = Globals.Content.Load<Texture2D>("nowaydude");
             
             deffont = Globals.Content.Load<SpriteFont>("Deffont");
         }
